@@ -1,13 +1,13 @@
 import board
 import busio
-from adafruit_ssd1306 import SSD1306
+import adafruit_ssd1306
 from PIL import Image, ImageDraw, ImageFont
 
 # Init I2C interface
 i2c = busio.I2C(board.SCL, board.SDA)
 
 # Init display
-display = SSD1306(width=128, height=64, i2c=i2c, addr=0x3C)
+display = adafruit_ssd1306.SSD1306_I2C(128, 64, i2c)
 
 # Clear display
 display.fill(0)
@@ -23,4 +23,3 @@ draw.text((10, 25), "Hello Pi!", fill=255)
 # Display image on screen
 display.image(image)
 display.show()
-

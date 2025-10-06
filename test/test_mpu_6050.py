@@ -7,7 +7,7 @@ import adafruit_mpu6050
 i2c = busio.I2C(board.SCL, board.SDA)
 
 # Initialisation of MPU6050
-mpu = adafruit_mpu6050.MPU6050(i2c, address=0x40)
+mpu = adafruit_mpu6050.MPU6050(i2c, address=0x68)
 
 print("Test MPU6050 : Click Ctrl-C to stop")
 

@@ -7,9 +7,9 @@ import adafruit_mpu6050
 i2c = busio.I2C(board.SCL, board.SDA)
 
 # Initialisation of MPU6050
-mpu = adafruit_mpu6050.MPU6050(i2c)
+mpu = adafruit_mpu6050.MPU6050(i2c, address=0x40)
 
-print("Test MPU6050 : Appuyez sur Ctrl+C pour quitter")
+print("Test MPU6050 : Click Ctrl-C to stop")
 
 try:
     while True:
@@ -27,4 +27,4 @@ try:
         time.sleep(1)
 
 except KeyboardInterrupt:
-    print("Arrêt du test MPU6050")
+    print("Test stopped by user")
